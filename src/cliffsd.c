@@ -5,20 +5,19 @@
 void
 cliffsd(double *control, int *controlcnt, double *pilot, int *pilotcnt, 
     double *delta) {
-  int control_bigger = 0, pilot_bigger = 0;
-  int i, j;
+  int i, j, result;
   *delta = 0;
 
   for (i = 0; i < *pilotcnt; i++) {
-    control_bigger = pilot_bigger = 0;
+    result = 0;
     for (j = 0; j < *controlcnt; j++) {
       if (pilot[i] > control[j]) {
-        pilot_bigger++;
+        result --;
       } else if (control[j] > pilot[i]) {
-        control_bigger++;
+        result ++;
       }
     }
-    *delta += ((double)(pilot_bigger - control_bigger) / *pilotcnt);
+    *delta += ((double)result / *pilotcnt);
   }
 
   *delta = (double)(*delta / *controlcnt);
