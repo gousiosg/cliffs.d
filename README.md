@@ -4,7 +4,8 @@ Cliffs.d
 A reasonably fast implementation of Cliff's delta effect size metric
 
 Calculates the metric using a tight C loop instead of examining the 
-input's dominance matrix. The algorithm is still `O(n^2)` but it
+input's dominance matrix. The algorithm is still `O(n x m)` (where
+`n` and `m` the sizes of the input vectors) but it
 is space efficient and executes in C code rather than R. As a result,
 it can process input vectors of 50k elements in about 10 seconds.
 
