@@ -1,0 +1,10 @@
+Package:     cliffsd
+Type:        Package
+Title:       Efficiently calculate Cliff's delta effect size metric 
+Version:     1.0
+Date:        2013-08-23
+Author:      Georgios Gousios
+Maintainer:  Georgios Gousios <G.Gousios@tudelft.nl>
+Description: Calculate Cliff's delta using a tight C loop instead of examining
+             the dominance table. Can process reasonably large inputs.
+License:     MIT
