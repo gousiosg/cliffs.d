@@ -10,7 +10,7 @@ it can process input vectors of 50k elements in about 10 seconds.
 
 The equivalent R code is the following (found [here](https://stat.ethz.ch/pipermail/r-help/2007-April/129592.html)):
 
-```R
+```s
 cliffs.d.1 <- function(x, y) {
   mean(rowMeans(sign(outer(x, y, FUN="-"))))
 }
@@ -18,7 +18,7 @@ cliffs.d.1 <- function(x, y) {
 
 #### Benchmarks
 
-```R
+```s
 > library(rbenchmark)
 > library(cliffsd)
 > cliffs.d.1 <- function(x, y) {
@@ -42,7 +42,7 @@ cliffs.d.1 <- function(x, y) {
 
 #### Correctness test
 
-```R
+```s
 library(cliffsd)
 
 cliffs.d.1 <- function(x, y) {
